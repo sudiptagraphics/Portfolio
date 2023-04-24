@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@import './light-theme.scss';
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: $c-03;
+    background-color: $c-01;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+a {
+    color: $c-11;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        color: $c-02;
+    }
+
+    &:visited {
+        color: $c-02;
+    }
+
+    &:active {
+        color: $c-02;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f6f6f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+}
+
+::-webkit-selection {
+    color: $c-01;
+    background: $c-03;
+}
+
+::-moz-selection {
+    color: $c-01;
+    background: $c-03;
+}
+
+::selection {
+    color: $c-01;
+    background: $c-03;
+}

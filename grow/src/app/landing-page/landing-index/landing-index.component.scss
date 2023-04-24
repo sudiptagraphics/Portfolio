@@ -1,0 +1,58 @@
+@import './../../../light-theme.scss';
+@import './../../../mixins.scss';
+
+.landing-gro-wraper {
+    padding: 100px 0 80px 0;
+
+    &:before {
+        content: '';
+        position: absolute;
+        height: 900px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom, #eae2b7, #ffe2cd, #ffe9e9, #fff4fc, #ffffff);
+    }
+
+    .header-shot-landing {
+        background: $c-09 url(./../../../assets/images/bg-hero-shot.svg) no-repeat right center;
+        padding: 80px 60px;
+        border-radius: 12px;
+
+        h1 {
+            font-size: 37px;
+            margin: 0 0 20px 0;
+            color: $c-01;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 0;
+            color: $c-01;
+        }
+
+        .get-started-btn {
+            background: $c-03;
+            color: $c-01;
+            padding: 16px 45px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+
+            &:hover {
+                background: $c-02;
+            }
+        }
+
+        .chart-top-header-shot {
+            right: 0;
+            top: 0;
+
+            #chart-live {
+                height: 100%;
+                font-size: 0;
+            }
+        }
+    }
+}

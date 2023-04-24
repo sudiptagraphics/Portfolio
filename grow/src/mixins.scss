@@ -1,0 +1,66 @@
+@import './light-theme.scss';
+
+@mixin flex-top-display {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+@mixin flex-cen-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-stretch-display {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+@mixin flex-start-display {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-end-display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+@mixin flex-space-between-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@mixin flex-space-between-display-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin transition {
+    -webkit-transition: ease 0.3s;
+    -moz-transition: ease 0.3s;
+    -o-transition: ease 0.3s;
+    transition: ease 0.3s;
+}
+
+@mixin border-radius ($ra) {
+    border-radius: $ra;
+    -webkit-border-radius: $ra;
+    -moz-border-radius: $ra;
+    -ms-border-radius: $ra;
+    -o-border-radius: $ra;
+}
+
+@mixin border-radiussep ($rt, $rr, $rb, $rl) {
+    border-radius: $rt $rr $rb $rl;
+    -webkit-border-radius: $rt $rr $rb $rl;
+    -moz-border-radius: $rt $rr $rb $rl;
+    -ms-border-radius: $rt $rr $rb $rl;
+    -o-border-radius: $rt $rr $rb $rl;
+}
