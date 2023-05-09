@@ -12,6 +12,9 @@ import { IndexFooterComponent } from './index-footer/index-footer.component';
   imports: [
     CommonModule,
     FooterRoutingModule
+  ],
+  exports: [
+    IndexFooterComponent
   ]
 })
 export class FooterModule { }

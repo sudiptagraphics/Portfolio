@@ -11,7 +11,11 @@ import { IndexHeaderComponent } from './index-header/index-header.component';
   ],
   imports: [
     CommonModule,
-    HeaderRoutingModule
+    HeaderRoutingModule,
+
+  ],
+  exports: [
+    IndexHeaderComponent
   ]
 })
 export class HeaderModule { }

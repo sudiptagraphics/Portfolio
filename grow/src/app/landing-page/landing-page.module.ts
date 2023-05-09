@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { LandingPageRoutingModule } from './landing-page-routing.module';
 import { LandingIndexComponent } from './landing-index/landing-index.component';
+import { HeaderModule } from '../header/header.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterModule } from '../footer/footer.module';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { LandingIndexComponent } from './landing-index/landing-index.component';
   ],
   imports: [
     CommonModule,
-    LandingPageRoutingModule
+    LandingPageRoutingModule,
+    HeaderModule,
+    CarouselModule,
+    FooterModule,
   ]
 })
 export class LandingPageModule { }

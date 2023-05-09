@@ -1,0 +1,76 @@
+@import './../../../light-theme.scss';
+@import './../../../mixins.scss';
+
+.footer-gro {
+    padding: 70px 0;
+    background: $c-03;
+
+    .footer-blocks {
+        @media (max-width:991px) {
+            padding: 0 25px;
+        }
+    }
+
+    .footer-inside-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+
+        @media (min-width:641px) and (max-width:991px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width:640px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        h4 {
+            color: $c-01;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 0 0 16px 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                padding: 6px 0;
+                font-size: 13px;
+                font-weight: 400;
+                color: $c-01;
+
+                a {
+                    color: $c-01;
+                    @include transition;
+
+                    &:hover {
+                        color: $c-12;
+                    }
+                }
+            }
+        }
+
+        p,
+        span {
+            font-size: 13px;
+            margin: 25px 0;
+            color: $c-01;
+            font-weight: 400
+        }
+
+        .list-social-networks {
+            @include flex-start-display;
+
+            a {
+                margin-right: 12px;
+            }
+        }
+
+        span {
+            color: $c-04;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as AOS from 'aos';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -9,10 +10,48 @@ am4core.useTheme(am4themes_animated);
   templateUrl: './landing-index.component.html',
   styleUrls: ['./landing-index.component.scss']
 })
-export class LandingIndexComponent {
 
+export class LandingIndexComponent {
+  constructor() { }
+  isLoading: 'false'
+  customOptions: OwlOptions = {
+    items: 4,
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      639: {
+        items: 2
+      },
+      767: {
+        items: 3
+      },
+      992: {
+        items: 4
+      }
+    },
+    nav: false
+  }
   ngOnInit() {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
+    this.chartHeader();
+
+  }
+
+  /**
+   * chartHeader
+   */
+  public chartHeader() {
     var chart = am4core.create("chart-live", am4charts.XYChart);
     chart.hiddenState.properties.opacity = 0;
 
@@ -61,8 +100,9 @@ export class LandingIndexComponent {
     series.defaultState.transitionDuration = 0;
     series.tensionX = 0.8;
     series.strokeWidth = 3;
-    series.fill = am4core.color("#fff");
-    
+    series.stroke = am4core.color("#FFB86D");
+
+
 
     chart.events.on("datavalidated", function () {
       dateAxis.zoom({ start: 1 / 15, end: 1.2 }, false, true);
@@ -138,15 +178,16 @@ export class LandingIndexComponent {
     var bullet = series.createChild(am4charts.CircleBullet);
     bullet.circle.radius = 5;
     bullet.fillOpacity = 1;
-    bullet.fill = chart.colors.getIndex(0);
+    //bullet.fill = chart.colors.getIndex(0);
     bullet.isMeasured = false;
+    bullet.fill = am4core.color("#FFB86D");
+    bullet.stroke = am4core.color("#FFB86D");
+    bullet.strokeOpacity = 1;
 
     series.events.on("validated", function () {
       bullet.moveTo(series.dataItems.last.point);
       bullet.validatePosition();
     });
   }
-
-
 
 }

@@ -64,3 +64,163 @@
     -ms-border-radius: $rt $rr $rb $rl;
     -o-border-radius: $rt $rr $rb $rl;
 }
+
+@mixin gen-anchore {
+    border: 0;
+    outline: none !important;
+    text-decoration: none !important;
+    @include transition;
+}
+
+@mixin gro-header {
+    top: 0;
+    left: 0;
+    z-index: 9;
+    position: absolute;
+    padding: 10px 0;
+
+    // padding-top: 5px;
+    @media (max-width:991px) {
+        padding: 20px 0;
+    }
+
+    .gro-nav-links {
+        flex-grow: inherit;
+
+        @media (max-width:991px) {
+            @include transition;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            position: fixed;
+            display: block;
+            height: 100vh;
+            background: rgba($c-01, 1);
+            padding: 50px 25px;
+            overflow: auto;
+        }
+
+        li {
+            list-style: none;
+            display: flex;
+
+            a {
+                font-size: 14px;
+                font-weight: 500;
+                color: $c-03;
+                padding: 23px 15px;
+
+                &:hover {
+                    color: $c-02;
+                }
+
+                @media (max-width:991px) {
+                    padding: 15px;
+                }
+            }
+
+            a.dropdown-toggle {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        li.dropdown {
+            @media (max-width:991px) {
+                flex-direction: column;
+            }
+        }
+
+        a.gro-start-investing {
+            @include gen-anchore;
+            color: $c-01;
+            background-image: linear-gradient(30deg, $c-02 50%, transparent 50%);
+            padding: 12px 23px;
+            border-radius: 5px;
+            line-height: 18px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 15px;
+            background-position: 0%;
+            background-size: 500px;
+            -webkit-transition: background 300ms ease-in-out;
+            transition: background 300ms ease-in-out;
+            border: 2px solid $c-02 ;
+            @include transition;
+
+            &:hover {
+                //background: $c-03;
+                color: $c-02;
+                background-position: 100%;
+            }
+
+            @media (max-width:991px) {
+                margin: 20px 0 0 13px;
+                float: left;
+            }
+        }
+
+        .dropdown-menu {
+            border: 0;
+            background: $c-01;
+            padding: 0;
+            min-width: 260px;
+            border-radius: 0px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+            a {
+                padding: 8px 15px;
+                font-size: 14px;
+
+                &:hover {
+                    color: $c-09;
+                    background: transparent;
+                }
+            }
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            top: 100%;
+            animation: dropdownAnimation 0.3s;
+
+            @media (max-width:991px) {
+                display: none;
+            }
+        }
+
+        @keyframes dropdownAnimation {
+            0% {
+                display: block;
+                opacity: 0;
+                transition: all 0.3s;
+                top: calc(100% + 25px);
+            }
+
+            100% {
+                display: block;
+                transition: all 0.3s;
+                opacity: 1;
+                top: 100%;
+            }
+        }
+    }
+
+    .show {
+        @media (max-width:991px) {
+            @include transition;
+            left: 0;
+        }
+    }
+
+    .dropdown-menu.show {
+        @media (max-width:991px) {
+            display: block !important;
+            box-shadow: none !important;
+            border-top: 1px solid $c-05 !important;
+            border-bottom: 1px solid $c-05 !important;
+            padding-left: 20px !important;
+        }
+    }
+}
